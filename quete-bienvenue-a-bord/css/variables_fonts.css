@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3&display=swap");
+
+:root {
+  --primary-color: #a306b6;
+  --primary-color-hover: hsl(294, 94%, 60%);
+  --secondary-color: #fff;
+  --card-color: #d9d9d9;
+  --font-header: "Montserrat", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-style: normal;
+  --font-regular: 400;
+  --font-bold: 700;
+}
