@@ -15,6 +15,11 @@ h2 + p {
   padding-bottom: 2rem;
 }
 
+a {
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -44,18 +49,58 @@ nav ul {
   }
 
   a {
-    display: inline-block;
-    text-decoration: none;
     font-size: 1.2rem;
-    color: var(--primary-dark);
     padding: 0.5em 1em;
-    border-radius: 5px;
-
-    &:hover {
-      background-color: var(--primary-dark);
-      color: var(--primary-light);
-    }
   }
+}
+
+.hover-og {
+  border-radius: 5px;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+  }
+}
+
+.hover-underline {
+  display: inline-block;
+  font-weight: 400;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  position: relative;
+  /* transition: transform 0.2s ease; */
+}
+
+.hover-underline:hover {
+  /* transform: scale(1.2); */
+  /* text-shadow: 0 0 1px var(--primary-dark); */
+  /* font-weight: 700; */
+}
+
+.hover-underline::after,
+.hover-underline::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-dark);
+  bottom: 0px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline::before {
+  top: 0px;
+  transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
 }
 
 nav img {
@@ -115,6 +160,7 @@ header #welcome {
   padding: 0.5em 1em;
   border-radius: 5px;
   margin-bottom: 2rem;
+  transition: 0.3s;
 
   &:hover {
     background-color: var(--primary-dark);
@@ -213,6 +259,68 @@ header #welcome {
   padding: 1rem;
 }
 
+#mittens {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 5%;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* Mittens Background image */
+#mittens::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/images/tabby.jpg) center / 100% no-repeat;
+  transition: background-size 0.3s ease;
+  z-index: 0;
+}
+
+/* Color overlay */
+/* #mittens::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fffbec25; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+} */
+
+/* Hover effects */
+#mittens:hover::before {
+  background-size: 110%;
+}
+
+/* #mittens:hover::after {
+  opacity: 0;
+} */
+
+#mittens:hover #mittensInfo {
+  opacity: 1;
+}
+
+#mittensInfo {
+  position: relative; /* needed for z-index */
+  z-index: 2; /* above ::before and ::after */
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.3s ease;
+  text-align: center;
+  background-color: #fffbec8e;
+  width: 100%;
+  padding: 0.5rem;
+}
+
 /* TREATS */
 
 #treats {
@@ -239,47 +347,120 @@ header #welcome {
 
 #visit {
   background-color: var(--primary-light);
+  padding-bottom: 3rem;
 }
 
-#twoVisitDiv {
-  border: 2px solid red;
+#visitContainer {
   display: flex;
+  justify-content: center;
+  gap: 2rem;
   margin: 0 auto;
   width: 60%;
 
-  div {
-    border: 2px solid red;
+  #infosVisit,
+  #code {
+    border-radius: 15px;
     width: 50%;
+    padding: 2rem;
+    box-shadow: 0 4px 20px var(--primary-dark);
+
+    h3 {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+#infosVisit ul {
+  list-style: none;
+  /* border: 2px solid blue;
+  width: 50%;
+  margin: 0 auto; */
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  i {
+    font-size: 1.3rem;
+    gap: 0.5rem;
+    margin-right: 1rem;
   }
 
-  #code {
+  span {
+    font-weight: bold;
+    display: block;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+#code {
+  p {
+    padding-bottom: 1rem;
+  }
+
+  ul {
+    list-style-position: inside;
+  }
+
+  li:last-of-type {
+    padding-bottom: 2rem;
   }
 }
 
 /* FOOTER */
 footer {
   display: flex;
-  gap: 1rem;
   background-color: var(--light-orange);
   padding: 1rem;
 }
 
 #footerLogoContainer {
+  /* border: 2px solid red; */
   width: 30%;
   text-align: center;
 }
 
 #footerLogoContainer img {
-  width: 30%;
+  width: 50%;
 }
 
 #footerContainer {
-  flex: 1;
+  /* border: 2px solid red; */
+  width: 80%;
+  margin: 0 auto;
+  /* flex: 1; */
   display: flex;
-  gap: 1rem;
 }
 
 .footerColumn {
   flex: 1;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+
+  ul {
+    list-style-position: inside;
+  }
+
+  h3 {
+    padding: 0.5rem 0;
+  }
+
+  p {
+    max-width: 30ch;
+    padding-bottom: 0.5rem;
+  }
+
+  i {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
 }

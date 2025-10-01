@@ -16,9 +16,9 @@
     <header>
       <nav>
         <ul>
-          <li><a href="">About Us</a></li>
-          <li><a href="">Menu</a></li>
-          <li><a href="cats.html">Our Cats</a></li>
+          <li><a class="hover-og" href="">About Us</a></li>
+          <li><a class="hover-og" href="">Menu</a></li>
+          <li><a class="hover-og" href="cats.html">Our Cats</a></li>
         </ul>
         <!-- <a id="topLogo" href="#welcome"> -->
         <img
@@ -27,9 +27,9 @@
         />
         <!-- </a> -->
         <ul>
-          <li><a href="">Events</a></li>
-          <li><a href="">Contact</a></li>
-          <li><a href="">FAQ</a></li>
+          <li><a class="hover-underline" href="">Events</a></li>
+          <li><a class="hover-underline" href="">Contact</a></li>
+          <li><a class="hover-underline" href="">FAQ</a></li>
         </ul>
       </nav>
       <div id="welcome">
@@ -54,7 +54,7 @@
         <div>
           <h2>A Home for Hearts & Paws</h2>
           <p>
-            At Purrfect Brew, we combine the comfort of exceptional coffee with
+            At Purrfect Brews, we combine the comfort of exceptional coffee with
             the joy of feline companionship. Our resident cats are all rescues
             looking for their forever homes, and every visit helps support local
             animal welfare while giving you the therapeutic benefit of cat
@@ -107,9 +107,8 @@
               <p>"The cuddle machine"</p>
             </div>
           </article>
-          <article class="catCard">
-            <img src="images/tabby.jpg" alt="" />
-            <div class="catInfo">
+          <article id="mittens">
+            <div id="mittensInfo">
               <h3>Mittens</h3>
               <p>Tabby • 1 year old</p>
               <p>"The faithful campanion"</p>
@@ -145,37 +144,75 @@
           We'd love to welcome you to our cozy cat cafe! Here's everything you
           need to know.
         </p>
-        <div id="twoVisitDiv">
-          <div>
-            <h4>Visit Information</h4>
+        <div id="visitContainer">
+          <div id="infosVisit">
+            <h3>Visit Information</h3>
+            <ul>
+              <li class="infoItem">
+                <i class="bi bi-clock"></i>
+                <div>
+                  <span>Tuesday - Sunday</span>
+                  <time datetime="09:00">9:00 AM</time> -
+                  <time datetime="20:00">8:00 PM</time>
+                </div>
+              </li>
+
+              <li class="infoItem">
+                <i class="bi bi-geo-alt"></i>
+                <address>
+                  <span>123 Whiskers Lane</span>
+                  <div>Cozy Corner, CC 12345</div>
+                </address>
+              </li>
+
+              <li class="infoItem">
+                <i class="bi bi-telephone"></i>
+                <address>
+                  <a href="tel:+15551235555">(555) 123-5555</a>
+                </address>
+              </li>
+
+              <li class="infoItem">
+                <i class="bi bi-envelope"></i>
+                <address>
+                  <a href="mailto:hello@purrfectbrews.com"
+                    >hello@purrfectbrews.com</a
+                  >
+                </address>
+              </li>
+            </ul>
           </div>
+
           <div id="code">
-            <h4>Code of Conduct</h4>
+            <h3>Code of Conduct</h3>
             <p>
               For the safety and comfort of everyone, humans and animals alike,
               we have put in place some simple rules to follow when visiting
-              Purrfect Brew.
+              Purrfect Brews:
             </p>
             <ul>
               <li>Hand sanitization required upon entry</li>
               <li>Children under 12 must be supervised</li>
               <li>Do not give any food or drink to the cats</li>
             </ul>
-            <a href="">See all rules in our FAQ</a>
+
+            <div class="buttonContainer">
+              <a class="button" href="">See all rules in our FAQ</a>
+            </div>
           </div>
         </div>
-        <!-- iframe map ? -->
       </section>
     </main>
+
     <footer>
-      <div id="footerLogoContainer">
-        <img
-          src="images/Purrfect Brew Logo.png"
-          alt="Purrfect Brew Logo"
-          width="100"
-        />
-      </div>
       <div id="footerContainer">
+        <div id="footerLogoContainer">
+          <img
+            src="images/Purrfect Brew Logo Cropped.png"
+            alt="Purrfect Brew Logo"
+          />
+        </div>
+
         <div class="footerColumn">
           <h3>Purrfect Brew</h3>
           <p>
@@ -189,11 +226,19 @@
             <li><a href="">About Us</a></li>
             <li><a href="">Menu</a></li>
             <li><a href="cats.html">Our Cats</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">FAQ</a></li>
           </ul>
         </div>
         <div class="footerColumn">
           <h3>Connect</h3>
-          <p>Follow our cats' daily adventures</p>
+          <p>
+            Follow our cats' daily adventures and new menu updates on social
+            media!
+          </p>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-facebook"></i>
         </div>
       </div>
     </footer>
